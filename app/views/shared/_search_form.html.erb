@@ -1,0 +1,22 @@
+<%= form_tag(profiles_search_path, :method => "get") do %>
+  <%= label_tag(:my_gender, "I am a ") %>
+  <%= select_tag(:my_gender, options_for_select([['Male', 'male'], ['Female', 'female']])) %>
+  <%= label_tag(:gender, " who is seeking a ") %>
+  <%= select_tag(:gender, options_for_select([['Male', 'male'], ['Female', 'female']])) %>
+  
+  <%= label_tag(:age_from, " from age ") %>
+  <%= select_tag(:age_from, options_for_select(18..99)) %>
+  <%= label_tag(:age_to, " to ") %>
+  <%= select_tag(:age_to, options_for_select(18..99)) %>
+  
+  <%= label_tag(:within, " within ") %>
+  <%= select_tag(:my_gender, 
+  		options_for_select([
+  			['5 miles', '5'], ['10 miles', '10'], ['15 miles', '15'], 
+  			['25 miles', '25'], ['35 miles', '35'], ['50 miles', '50']
+  		])) %>
+  <%= label_tag(:zip_code, " of zip code ") %>
+  <%= text_field_tag(:zip_code, nil, :size => 5) %>
+  <br/>
+  <div style="float: right;"><%= submit_tag("Search") %></div>
+<% end %>

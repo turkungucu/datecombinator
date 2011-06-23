@@ -1,0 +1,109 @@
+/* 
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+  You can use Sass (SCSS) here: http://sass-lang.com/
+*/
+
+$gray: #dddddd;
+$bg-gray: #eeeeee;
+$bg-container: #ffffff;
+$side-margin: 15%;
+
+html, body {
+    /*georgia,"helvetica neue","microsoft sans serif",arial,sans-serif*/
+    font: 12px Arial, Helvetica, sans-serif;
+    margin: 0; /* it's good practice to zero the margin and padding of the body element to account for differing browser defaults */
+    padding: 0;
+    color: #555555;
+    height: 100%;
+    background-color: $bg-gray;
+}
+
+a { 
+  color: #000;
+  &:visited { color: #666; }
+  &:hover { color: #fff; background-color:#000; }
+}
+
+input, textarea, select {
+    border: 1px solid $gray;
+    padding: 3px;
+}
+
+.logo {
+    background: transparent url("dc-logo.png") no-repeat left top;
+    position: absolute;
+    width: 330px;
+    height: 70px;
+    z-index: 1000;
+    top: 5px;
+    left: 15%;
+}
+
+/* MIXIN Begins */
+@mixin container-common {
+    border: 1px solid $gray;
+    background-color: $bg-container;
+    padding: 30px;
+    @extend .side-spacer;
+}
+
+@mixin no-margin-padding {
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+/* MIXIN Ends */
+
+/* Container Styles Begin */
+.body-container {
+    min-height: 100%;
+    position: relative;
+}
+
+.header-container {
+    @include no-margin-padding;
+    border-bottom: 1px solid $gray;
+    position: relative;
+    z-index: 98;
+    height: 70px;
+    text-align: right;
+    background-color: $bg-container;
+}
+
+.content-container {
+    @include container-common;
+}
+
+.search-container {
+    @include container-common;
+    height: 60px;
+}
+
+.footer-container {
+    @include no-margin-padding;
+    border-top: 1px solid $gray;
+    position: absolute;
+    height: 170px;
+    width: 100%;
+    background-color: $gray;
+    bottom: 0px;
+}
+/* Container Styles End */
+
+/* Spacers Begin */
+.spacer {
+    @include no-margin-padding;
+    position: relative;
+    height: 20px;
+}
+
+#top-spacer {
+  padding-top: 5px;
+}
+
+.side-spacer {
+    margin-left: $side-margin;
+    margin-right: $side-margin;
+}
+/* Spacers End */

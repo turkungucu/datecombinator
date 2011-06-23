@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  gender: MyString
+  date_of_birth: 2011-06-09
+  zip_code: MyString
+  profile: MyText
+
+two:
+  name: MyString
+  gender: MyString
+  date_of_birth: 2011-06-09
+  zip_code: MyString
+  profile: MyText

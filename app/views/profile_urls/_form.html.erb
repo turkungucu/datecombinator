@@ -1,0 +1,15 @@
+<%= form_for([@profile, @profile.profile_urls.build]) do |f| %>
+	<div class="field">
+		<%= f.label :url %>
+		<br />
+		<%= f.text_field :url %>
+	</div>
+	<div class="field">
+		<%= f.label :display_name %>
+		<br />
+		<%= f.text_field :display_name %>
+	</div>
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+<% end %>

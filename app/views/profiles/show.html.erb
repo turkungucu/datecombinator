@@ -1,0 +1,56 @@
+<p id="notice">
+	<%= notice %>
+</p>
+
+<p>
+	<b>Name:</b>
+	<%= @profile.name %>
+</p>
+
+<p>
+	<b>Gender:</b>
+	<%= @profile.gender %>
+</p>
+
+<p>
+	<b>Date of birth:</b>
+	<%= @profile.date_of_birth %>
+</p>
+
+<p>
+	<b>Zip code:</b>
+	<%= @profile.zip_code %>
+</p>
+
+<p>
+	<b>Profile:</b>
+	<%= @profile.profile %>
+</p>
+
+<table width="100%">
+	<tr>
+		<td valign="top">
+			<h2>Profile Urls</h2>
+			<%= render :partial => "profile_urls/profile_url",
+			           :collection => @profile.profile_urls %>
+		</td>
+		<td valign="top">
+			<h2>Profile Images</h2>
+			<%= render :partial => "profile_images/profile_image",
+			           :collection => @profile.profile_images %>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<h2>Add a Profile Url:</h2>
+			<%= render "profile_urls/form" %>
+		</td>
+		<td valign="top">
+			<h2>Add a Profile Image</h2>
+			<%= render "profile_images/form" %>
+		</td>
+	</tr>
+</table>
+
+<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<%= link_to 'Back', profiles_path %>

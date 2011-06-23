@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Datecombinator</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div class="body-container">
+		
+		<div class="header-container">
+			<div class="side-spacer" id="top-spacer">
+				<%= render "shared/header" %>
+			</div>
+		</div>
+		
+		<div class="spacer"></div>
+		
+		<div class="search-container">
+			<%= render "shared/search_form"%>
+		</div>
+		
+		<div class="spacer"></div>
+		
+		<div class="content-container">
+			<p class="notice"><%= notice %></p>
+	    	<p class="alert"><%= alert %></p>
+	    	<%= yield %>
+		</div>
+		
+		<div class="spacer"></div>
+		
+		<!-- <div class="footer-container">
+			<%= render "shared/footer" %>
+		</div> -->
+	</div>
+</body>
+</html>

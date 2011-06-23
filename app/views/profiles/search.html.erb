@@ -1,0 +1,31 @@
+<% if @profiles.any? %>
+	<table width="100%">
+		<% @profiles.each do |profile| %>
+			<tr>
+				<td width="10%">
+					<% if profile.profile_images.any? %>
+						<% profile.profile_images.each do |image| %>
+							<%= image_tag image.url %>
+						<% end %>
+					<% else %>
+						No pic.
+					<% end %>
+				</td>
+				<td width="70%">
+					<p><b><%= profile.name %>, <%= age(profile.date_of_birth) %>, from <%= profile.zip_code %></b></p>
+					<p><%= profile.profile %></p>
+				</td>
+				<td width="20%">
+					<% if profile.profile_urls.any? %>
+						<p><b>Contact Via:</b></p>
+						<% profile.profile_urls.each do |url| %>
+							<%= link_to url.display_name, url.url%><br/>
+						<% end %>
+					<% end %>
+				</td>
+			</tr>
+		<% end %>
+	</table>
+<% else %>
+	No Results Found.
+<% end %>
