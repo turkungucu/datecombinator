@@ -15,7 +15,7 @@
 					<p><b><%= profile.name %>, <%= age(profile.date_of_birth) %>, from <%= profile.zip_code %></b></p>
 					<p><%= profile.profile %></p>
 				</td>
-				<td width="20%">
+				<td width="20%" valign="top">
 					<% if profile.profile_urls.any? %>
 						<p><b>Contact Via:</b></p>
 						<% profile.profile_urls.each do |url| %>
