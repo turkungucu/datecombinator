@@ -2,11 +2,13 @@
 
 <table>
   <tr>
-    <th>Name</th>
+    <th>Nickname</th>
     <th>Gender</th>
+    <th>Seeking Gender</th>
     <th>Date of birth</th>
     <th>Zip code</th>
-    <th>Profile</th>
+    <th>Headline</th>
+    <th>Description</th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,11 +16,13 @@
 
 <% @profiles.each do |profile| %>
   <tr>
-    <td><%= profile.name %></td>
+    <td><%= profile.nickname %></td>
     <td><%= profile.gender %></td>
+    <td><%= profile.seeking_gender %></td>
     <td><%= profile.date_of_birth %></td>
     <td><%= profile.zip_code %></td>
-    <td><%= profile.profile %></td>
+    <td><%= profile.headline %></td>
+    <td><%= profile.description %></td>
     <td><%= link_to 'Show', profile %></td>
     <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
     <td><%= link_to 'Destroy', profile, confirm: 'Are you sure?', method: :delete %></td>

@@ -1,8 +1,8 @@
 <%= form_tag(profiles_search_path, :method => "get") do %>
-  <%= label_tag(:my_gender, "I am a ") %>
-  <%= select_tag(:my_gender, options_for_select([['Male', 'male'], ['Female', 'female']])) %>
-  <%= label_tag(:gender, " who is seeking a ") %>
+  <%= label_tag(:gender, "I am a ") %>
   <%= select_tag(:gender, options_for_select([['Male', 'male'], ['Female', 'female']])) %>
+  <%= label_tag(:seeking_gender, " who is seeking a ") %>
+  <%= select_tag(:seeking_gender, options_for_select([['Male', 'male'], ['Female', 'female']])) %>
   
   <%= label_tag(:age_from, " from age ") %>
   <%= select_tag(:age_from, options_for_select(18..99)) %>

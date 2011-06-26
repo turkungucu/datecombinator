@@ -84,7 +84,8 @@ class ProfilesController < ApplicationController
   def search
     @profiles = Profile.where(:date_of_birth => 
                                 (Time.now - Integer(params[:age_to]).year)..(Time.now - Integer(params[:age_from]).year), 
-                              :gender => params[:gender]
+                              :gender => params[:seeking_gender], 
+                              :seeking_gender => params[:gender]
                              )
 
     respond_to do |format|

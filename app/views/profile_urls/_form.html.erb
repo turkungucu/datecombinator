@@ -7,7 +7,7 @@
 	<div class="field">
 		<%= f.label :display_name %>
 		<br />
-		<%= f.text_field :display_name %>
+		<%= f.select :display_name, options_for_select([['PlentyOfFish', 'PlentyOfFish'], ['Match.com', 'Match.com']]) %>
 	</div>
 	<div class="actions">
 		<%= f.submit %>

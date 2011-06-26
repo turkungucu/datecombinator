@@ -12,12 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.label :nickname %><br />
+    <%= f.text_field :nickname %>
   </div>
   <div class="field">
     <%= f.label :gender %><br />
-    <%= f.text_field :gender %>
+    <%= f.select :gender, options_for_select([['Male', 'male'], ['Female', 'female']]) %>
+  </div>
+  <div class="field">
+    <%= f.label :seeking_gender %><br />
+    <%= f.select :seeking_gender, options_for_select([['Male', 'male'], ['Female', 'female']]) %>
   </div>
   <div class="field">
     <%= f.label :date_of_birth %><br />
@@ -25,11 +29,15 @@
   </div>
   <div class="field">
     <%= f.label :zip_code %><br />
-    <%= f.text_field :zip_code %>
+    <%= f.text_field :zip_code, :size => 5 %>
   </div>
   <div class="field">
-    <%= f.label :profile %><br />
-    <%= f.text_area :profile %>
+    <%= f.label :headline %><br />
+    <%= f.text_field :headline, :size => 20 %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
   </div>
   <div class="actions">
     <%= f.submit %>

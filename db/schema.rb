@@ -32,11 +32,13 @@ ActiveRecord::Schema.define(:version => 20110610065015) do
   add_index "profile_urls", ["profile_id"], :name => "index_profile_urls_on_profile_id"
 
   create_table "profiles", :force => true do |t|
-    t.string   "name"
+    t.string   "nickname"
     t.string   "gender"
+    t.string   "seeking_gender"
     t.date     "date_of_birth"
     t.string   "zip_code"
-    t.text     "profile"
+    t.string   "headline"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
