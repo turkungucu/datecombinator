@@ -18,7 +18,6 @@ gem 'devise'
 
 # Use unicorn as the web server
 # gem 'unicorn'
-gem 'thin'
 
 # Deploy with Capistrano
 # gem 'capistrano'
@@ -33,4 +32,5 @@ end
 
 group :production do
   gem 'therubyracer-heroku', '0.8.1.pre3'
+  gem 'thin'
 end
