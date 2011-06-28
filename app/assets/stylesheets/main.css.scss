@@ -5,97 +5,107 @@
 */
 
 $gray: #dddddd;
+$gold: #A58D4C;
 $bg-gray: #eeeeee;
 $bg-container: #ffffff;
 $side-margin: 15%;
+$footer-height: 142px;
 
 html, body {
-    /*georgia,"helvetica neue","microsoft sans serif",arial,sans-serif*/
-    font: 12px Arial, Helvetica, sans-serif;
-    margin: 0; /* it's good practice to zero the margin and padding of the body element to account for differing browser defaults */
-    padding: 0;
-    color: #555555;
-    height: 100%;
-    background-color: $bg-gray;
+  /*georgia,"helvetica neue","microsoft sans serif",arial,sans-serif*/
+  font: 12px Arial, Helvetica, sans-serif;
+  margin: 0; /* it's good practice to zero the margin and padding of the body element to account for differing browser defaults */
+  padding: 0;
+  color: #555555;
+  height: 100%;
+  background-color: $bg-gray;
 }
 
 a { 
-  color: #000;
-  &:visited { color: #666; }
-  &:hover { color: #fff; background-color:#000; }
+  color: $gold;
+  text-decoration: none;
+  &:visited { color: $gold; }
+  &:hover { color: $gold; text-decoration: underline; }
 }
 
 input, textarea, select {
-    border: 1px solid $gray;
-    padding: 3px;
+  border: 1px solid $gray;
+  padding: 3px;
 }
 
 .logo {
-    background: transparent url("dc-logo.png") no-repeat left top;
-    position: absolute;
-    width: 330px;
-    height: 70px;
-    z-index: 1000;
-    top: 5px;
-    left: 15%;
+  background: transparent url("dc-logo.png") no-repeat left top;
+  position: absolute;
+  width: 330px;
+  height: 70px;
+  z-index: 1000;
+  top: 5px;
+  left: 15%;
 }
 
 /* MIXIN Begins */
 @mixin container-common {
-    border: 1px solid $gray;
-    background-color: $bg-container;
-    padding: 30px;
-    @extend .side-spacer;
+  border: 1px solid $gray;
+  background-color: $bg-container;
+  padding: 30px;
+  @extend .side-spacer;
 }
 
 @mixin no-margin-padding {
-    margin: 0;
-    padding: 0;
-    display: block;
+  margin: 0;
+  padding: 0;
+  display: block;
 }
 /* MIXIN Ends */
 
 /* Container Styles Begin */
 .body-container {
-    min-height: 100%;
-    position: relative;
+  min-height: 100%;
+  position: relative;
+  margin: 0 auto -$footer-height; /* the bottom margin is the negative value of the footer's height */
+  height: auto !important;
+  height: 100%;
 }
 
 .header-container {
-    @include no-margin-padding;
-    border-bottom: 1px solid $gray;
-    position: relative;
-    z-index: 98;
-    height: 70px;
-    text-align: right;
-    background-color: $bg-container;
+  @include no-margin-padding;
+  border-bottom: 1px solid $gray;
+  position: relative;
+  z-index: 98;
+  height: 70px;
+  text-align: right;
+  background-color: $bg-container;
 }
 
 .content-container {
-    @include container-common;
+  @include container-common;
 }
 
 .search-container {
-    @include container-common;
-    height: 60px;
+  @include container-common;
+  height: 60px;
 }
 
 .footer-container {
-    @include no-margin-padding;
-    border-top: 1px solid $gray;
-    position: absolute;
-    height: 170px;
-    width: 100%;
-    background-color: $gray;
-    bottom: 0px;
+  height: $footer-height;
+  background-color: #e5e5e5;
+  padding-top: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.centered-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 /* Container Styles End */
 
 /* Spacers Begin */
 .spacer {
-    @include no-margin-padding;
-    position: relative;
-    height: 20px;
+  @include no-margin-padding;
+  position: relative;
+  height: 20px;
 }
 
 #top-spacer {
@@ -103,7 +113,7 @@ input, textarea, select {
 }
 
 .side-spacer {
-    margin-left: $side-margin;
-    margin-right: $side-margin;
+  margin-left: $side-margin;
+  margin-right: $side-margin;
 }
 /* Spacers End */

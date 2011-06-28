@@ -1,7 +1,7 @@
 <% if @profiles.any? %>
-	<table width="100%">
+	<table width="100%" cellspacing="0">
 		<% @profiles.each do |profile| %>
-			<tr>
+			<tr class="<%= cycle("even", "odd") %>">
 				<td width="10%">
 					<% if profile.profile_images.any? %>
 						<% profile.profile_images.each do |image| %>
@@ -20,7 +20,9 @@
 					<% if profile.profile_urls.any? %>
 						<b>Contact Via:</b><br/>
 						<% profile.profile_urls.each do |url| %>
-							<%= link_to url.display_name, url.url, :target => "_blank" %><br/>
+							<a href="<%= url.url %>" class="button" target="_blank">
+								<span id="contact-via"><%= url.display_name %></span>
+							</a><br/>
 						<% end %>
 					<% end %>
 				</td>

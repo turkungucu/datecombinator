@@ -4,7 +4,8 @@
   You can use Sass (SCSS) here: http://sass-lang.com/
 */
 
-$gold: #C7A317;
+$gold: #A58D4C;
+$off-white: #f6f6f6;
 
 span.headline {
   color: $gold;
@@ -23,3 +24,6 @@ td#contact-via {
   padding-left: 20px; 
 }
 
+.odd {
+  background-color: $off-white;
+}
