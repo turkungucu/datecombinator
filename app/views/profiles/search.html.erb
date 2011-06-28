@@ -13,7 +13,8 @@
 				</td>
 				<td id="profile">
 					<span class="headline"><%= profile.headline %></span><br/>
-					<b><%= profile.nickname %>, Age <%= age(profile.date_of_birth) %>, from <%= profile.zip_code %></b>
+					<b><%= profile.nickname %>, Age <%= age(profile.date_of_birth) %>, 
+						from <%= cityFromZip(profile.zip_code) %></b>
 					<p><%= profile.description %></p>
 				</td>
 				<td id="contact-via">

@@ -1,3 +1,5 @@
+require 'zip_codes_helper'
+
 class ProfilesController < ApplicationController
   # GET /profiles
   # GET /profiles.json
@@ -82,12 +84,20 @@ class ProfilesController < ApplicationController
   end
   
   def search
-    @profiles = Profile.where(:date_of_birth => 
-                                (Time.now - Integer(params[:age_to]).year)..(Time.now - Integer(params[:age_from]).year), 
-                              :gender => params[:seeking_gender], 
-                              :seeking_gender => params[:gender]
-                             )
-
+    cond_hash = {:date_of_birth => 
+                  (Time.now - Integer(params[:age_to]).year)..(Time.now - Integer(params[:age_from]).year), 
+                  :gender => params[:seeking_gender], 
+                  :seeking_gender => params[:gender]
+                 }
+    
+    zc = params[:zip_code]
+    if !zc.nil? and !zc.empty?
+      zip_codes = ZipCodesHelper.get_nearby_zip_codes(zc, params[:within].to_i)
+      cond_hash[:zip_code] = zip_codes
+    end
+    
+    @profiles = Profile.where(cond_hash)
+    
     respond_to do |format|
       format.html # search.html.erb
       format.json { render json: @profiles }
