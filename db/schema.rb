@@ -10,7 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110626234659) do
+ActiveRecord::Schema.define(:version => 20110629050855) do
+
+  create_table "click_outs", :force => true do |t|
+    t.integer  "profile_id"
+    t.string   "ip_address"
+    t.datetime "click_time"
+  end
+
+  add_index "click_outs", ["profile_id"], :name => "index_click_outs_on_profile_id"
 
   create_table "profile_images", :force => true do |t|
     t.string   "url"

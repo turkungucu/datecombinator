@@ -103,4 +103,19 @@ class ProfilesController < ApplicationController
       format.json { render json: @profiles }
     end
   end
+  
+  def clickout
+    profile_id = params[:id]
+    url = ProfileUrl.find_by_profile_id(profile_id)
+    if !url.nil?
+      # First log the click
+      click = ClickOut.new
+      click.profile_id = profile_id
+      click.ip_address = request.remote_ip
+      click.click_time = Time.now
+      click.save
+      
+      redirect_to url.url
+    end
+  end
 end

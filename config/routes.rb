@@ -1,5 +1,6 @@
 Datecombinator::Application.routes.draw do
   get "profiles/search"
+  match 'profiles/:id/clickout' => 'profiles#clickout'
   
   resources :profiles do
     resources :profile_urls

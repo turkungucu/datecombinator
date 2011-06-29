@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  ip_address: MyString
+  click_time: 2011-06-28 22:08:55
+
+two:
+  ip_address: MyString
+  click_time: 2011-06-28 22:08:55
