@@ -2,7 +2,7 @@
 	<table width="100%" cellspacing="0">
 		<% @profiles.each do |profile| %>
 			<tr class="<%= cycle("even", "odd") %>">
-				<td width="10%">
+				<td id="picture">
 					<% if profile.profile_images.any? %>
 						<% profile.profile_images.each do |image| %>
 							<%= image_tag image.url %>
@@ -14,7 +14,7 @@
 				<td id="profile">
 					<span class="headline"><%= profile.headline %></span><br/>
 					<b><%= profile.nickname %>, Age <%= age(profile.date_of_birth) %>, from <%= profile.zip_code %></b>
-					<p><%= profile.description %></p>
+					<p><%= profile.description.truncate(350) %></p>
 				</td>
 				<td id="contact-via">
 					<% if profile.profile_urls.any? %>

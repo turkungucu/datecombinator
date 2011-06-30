@@ -4,49 +4,22 @@
   You can use Sass (SCSS) here: http://sass-lang.com/
 */
 
-$gray: #dddddd;
-$gold: #A58D4C;
-$bg-gray: #eeeeee;
-$bg-container: #ffffff;
+$page-background-color: #eeeeee;
+$container-border-color: #dddddd;
+$font-color: #555555;
+$footer-link-color: #ffffff;
+$gold: #AD995D;
+$wine: #870120;
+$container-background-color: #ffffff;
+$footer-background-color: #CFC292;
 $side-margin: 15%;
 $footer-height: 142px;
-
-html, body {
-  /*georgia,"helvetica neue","microsoft sans serif",arial,sans-serif*/
-  font: 12px Arial, Helvetica, sans-serif;
-  margin: 0; /* it's good practice to zero the margin and padding of the body element to account for differing browser defaults */
-  padding: 0;
-  color: #555555;
-  height: 100%;
-  background-color: $bg-gray;
-}
-
-a { 
-  color: $gold;
-  text-decoration: none;
-  &:visited { color: $gold; }
-  &:hover { color: $gold; text-decoration: underline; }
-}
-
-input, textarea, select {
-  border: 1px solid $gray;
-  padding: 3px;
-}
-
-.logo {
-  background: transparent url("dc-logo.png") no-repeat left top;
-  position: absolute;
-  width: 330px;
-  height: 70px;
-  z-index: 1000;
-  top: 5px;
-  left: 15%;
-}
+$offset-footer-height: 162px;
 
 /* MIXIN Begins */
 @mixin container-common {
-  border: 1px solid $gray;
-  background-color: $bg-container;
+  border: 1px solid $container-border-color;
+  background-color: $container-background-color;
   padding: 30px;
   @extend .side-spacer;
 }
@@ -56,25 +29,100 @@ input, textarea, select {
   padding: 0;
   display: block;
 }
+
+@mixin header-common {
+  color: $gold;
+}
+
+@mixin logo-common {
+  width: 300px;
+  height: 70px;
+  z-index: 1000;
+}
 /* MIXIN Ends */
+
+html, body {
+  /*georgia,"helvetica neue","microsoft sans serif",arial,sans-serif*/
+  font: 12px Arial, Helvetica, sans-serif;
+  margin: 0; /* it's good practice to zero the margin and padding of the body element to account for differing browser defaults */
+  padding: 0;
+  color: $font-color;
+  height: 100%;
+  background-color: $page-background-color;
+}
+
+a { 
+  color: $wine;
+  &:visited { color: $wine; }
+  &:hover { color: $gold; }
+}
+
+input, textarea, select {
+  border: 1px solid #cccccc;
+  padding: 4px;
+  height: 25px;
+  width: 250px;
+  font-size: 15px;
+  color: $font-color;
+}
+
+label {
+  font-size: 15px;
+}
+
+#user_remember_me {
+  width: auto;
+  height: auto;
+}
+
+#search_form input, textarea, select {
+  width: auto;
+  height: auto;
+}
+
+h2 {
+  @include header-common;
+  font-weight: lighter;
+  font-size: 24px;
+}
+
+.headline {
+  @include header-common;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.logo {
+  @include logo-common;
+  background: transparent url("dc-logo-lc.png") no-repeat left top;
+  position: absolute;
+  top: 8px;
+  left: $side-margin;
+}
+
+.footer-logo {
+  @include logo-common;
+  background: transparent url("dc-logo-lc-white.png") no-repeat left top;
+}
 
 /* Container Styles Begin */
 .body-container {
   min-height: 100%;
-  position: relative;
-  margin: 0 auto -$footer-height; /* the bottom margin is the negative value of the footer's height */
+  margin: -$offset-footer-height auto auto; /* the bottom margin is the negative value of the footer's height */
   height: auto !important;
   height: 100%;
+  clear: both;
 }
 
 .header-container {
   @include no-margin-padding;
-  border-bottom: 1px solid $gray;
+  border-top: $offset-footer-height solid #fff;
+  border-bottom: 1px solid $container-border-color;
   position: relative;
   z-index: 98;
   height: 70px;
   text-align: right;
-  background-color: $bg-container;
+  background-color: $container-background-color;
 }
 
 .content-container {
@@ -88,10 +136,20 @@ input, textarea, select {
 
 .footer-container {
   height: $footer-height;
-  background-color: #e5e5e5;
+  background-color: $footer-background-color;
   padding-top: 20px;
   text-align: center;
   width: 100%;
+  clear: both;
+  color: $gold;
+  
+  & a {
+    color: $footer-link-color;
+    text-decoration: none;
+    font-weight: bold;
+    &:visited { color: $footer-link-color; }
+    &:hover { color: $footer-link-color; text-decoration: underline; }
+  }
 }
 
 .centered-container {

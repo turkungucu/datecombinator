@@ -29,13 +29,13 @@ a.button{
     border:none;
     border-top: $border-style-2;
     border-left: $border-style-2;
-    background: url(dc-button-bg-gold-active.png) repeat-x;
+    background: url(dc-button-pink.png) repeat-x;
     cursor: pointer;
   }
 }
 
 a.button span{
-    background: url(dc-button-bg-gold.png) repeat-x;
+    background: url(dc-button-pink.png) repeat-x;
     float: left;
     line-height: 20px;
     height: 20px;
@@ -53,12 +53,13 @@ a.button span{
   border-right: $border-style-2;
   border-bottom: $border-style-2;
   width: auto;
+  min-width: 100px;
   text-decoration: none;
   // line-height:24px;
-  height:34px;
+  height: 34px;
   padding-bottom: 6px;
   cursor: pointer;
  
   /* Background gradient */
-  background: #d4d0c8 url(dc-button-bg.gif) repeat-x;
+  background: #d4d0c8 url(dc-button-gray.gif) repeat-x;
 }

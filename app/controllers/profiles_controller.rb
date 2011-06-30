@@ -89,8 +89,8 @@ class ProfilesController < ApplicationController
                              )
 
     respond_to do |format|
-      format.html # search.html.erb
-      format.json { render json: @profiles }
+      #format.html # search.html.erb
+      format.js
     end
   end
 end

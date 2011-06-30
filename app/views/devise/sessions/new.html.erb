@@ -1,6 +1,17 @@
-<h2>Sign in</h2>
+<h2>Login</h2>
 
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  <% if (!alert.blank?) %>
+    <div id="error_explanation">
+      <h2><%= I18n.t("errors.messages.not_saved.one") %></h2>
+	    <ul>
+		  <li>
+			<%= alert %>
+		  </li>
+	    </ul>
+    </div>
+  <% end %>
+				
   <p><%= f.label :email %><br />
   <%= f.email_field :email %></p>
 
@@ -11,7 +22,7 @@
     <p><%= f.check_box :remember_me %> <%= f.label :remember_me %></p>
   <% end -%>
 
-  <p><%= f.submit "Sign in", :class => "submit" %></p>
+  <p><%= f.submit "Login", :class => "submit" %></p>
 <% end %>
 
 <%= render :partial => "devise/shared/links" %>
