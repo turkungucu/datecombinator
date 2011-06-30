@@ -15,17 +15,19 @@ div.field, div.actions {
 
 .field_with_errors {
   padding: 2px;
-  background-color: red;
   display: table;
+  
+  & label { background-color: #ffffff; }
+  & input { border: 1px solid #c00; }
 }
 
 #error_explanation {
   width: 450px;
-  border: 2px solid red;
   padding: 7px;
-  padding-bottom: 0;
+  padding-bottom: 2px;
   margin-bottom: 20px;
   background-color: #f0f0f0;
+  border: 1px solid #c00;
   
   h2 {
     text-align: left;

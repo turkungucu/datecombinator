@@ -4,22 +4,15 @@
   You can use Sass (SCSS) here: http://sass-lang.com/
 */
 
-$gold: #C7A317;
+$odd-row-background-color: #f6f6f6;
 
-span.headline {
-  color: $gold;
-  font-size: 16px;
-  font-weight: bold;
+td {
+  padding: 20px 0 20px 20px;
+  &#picture { width: 10%; }
+  &#profile { width: 70%; }
+  &#contact-via { width: 20%; vertical-align: top; }
 }
 
-td#profile {
-  padding-left: 20px;
-  width: 70%;
+.odd {
+  background-color: $odd-row-background-color;
 }
-
-td#contact-via {
-  width: 20%;
-  vertical-align: top;
-  padding-left: 20px; 
-}
-

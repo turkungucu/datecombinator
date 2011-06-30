@@ -99,8 +99,8 @@ class ProfilesController < ApplicationController
     @profiles = Profile.where(cond_hash)
     
     respond_to do |format|
-      format.html # search.html.erb
-      format.json { render json: @profiles }
+      #format.html # search.html.erb
+      format.js
     end
   end
   

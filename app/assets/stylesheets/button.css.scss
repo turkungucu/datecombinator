@@ -1,0 +1,65 @@
+/* 
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+  You can use Sass (SCSS) here: http://sass-lang.com/
+*/
+
+$border-style-1: 1px solid #999;
+$border-style-2: 1px solid #333;
+
+a.button{
+  float: left;
+  font-size: 14px;
+  font-weight: bold;
+  border-top: $border-style-1;
+  border-left: $border-style-1;
+  border-right: $border-style-2;
+  border-bottom: $border-style-2;
+  width: auto;
+  text-decoration: none;
+  
+  &:active { 
+    border-top: $border-style-2; 
+    border-left: $border-style-2; 
+    border-right: $border-style-1; 
+    border-bottom: $border-style-1; 
+  }
+  
+  &:active span { 
+    border:none;
+    border-top: $border-style-2;
+    border-left: $border-style-2;
+    background: url(dc-button-pink.png) repeat-x;
+    cursor: pointer;
+  }
+}
+
+a.button span{
+    background: url(dc-button-pink.png) repeat-x;
+    float: left;
+    line-height: 20px;
+    height: 20px;
+    padding: 0 10px;
+    color: #fff;
+    width: 100px;
+    text-align: center;
+}
+
+.submit {
+  font-size: 14px;
+  font-weight: bold;
+  border-top: $border-style-1;
+  border-left: $border-style-1;
+  border-right: $border-style-2;
+  border-bottom: $border-style-2;
+  width: auto;
+  min-width: 100px;
+  text-decoration: none;
+  // line-height:24px;
+  height: 34px;
+  padding-bottom: 6px;
+  cursor: pointer;
+ 
+  /* Background gradient */
+  background: #d4d0c8 url(dc-button-gray.gif) repeat-x;
+}
