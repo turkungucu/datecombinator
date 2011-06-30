@@ -21,7 +21,7 @@
 					<% if profile.profile_urls.any? %>
 						<b>Contact Via:</b><br/>
 						<% profile.profile_urls.each do |url| %>
-							<a href="#{url.profile_id}/clickout" class="button" target="_blank">
+							<a href="<%= "/profiles/#{url.profile_id}/clickout" %>" class="button" target="_blank">
 								<span id="contact-via"><%= url.display_name %></span>
 							</a><br/>
 						<% end %>
