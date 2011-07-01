@@ -24,6 +24,7 @@
 		<div class="spacer"></div>
 		
 		<div class="content-container">
+			<div id="ajax-loader" style="display: none;"><img src="/assets/ajax-loader.gif" /></div>
 			<div id="search-results">
 		    	<%= yield %>
 		    </div>
@@ -39,12 +40,3 @@
 	
 </body>
 </html>
-
-<script type="text/javascript">
-	$(document).ready(function(){
-	    $('#search_form .submit').click(function() {
-	    	$('#search-results').slideUp("slow");
-			$('.content-container').prepend('<div id="ajax-loader"><img src="/assets/ajax-loader.gif" /></div>');
-		});	
-	});
-</script>

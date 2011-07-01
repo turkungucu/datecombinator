@@ -1,3 +1,1 @@
 $("#search-results").empty().html("<%= escape_javascript(render :partial => 'search_results', :object => @profiles) %>");
-$("#ajax-loader").remove();
-$("#search-results").slideDown("slow");
