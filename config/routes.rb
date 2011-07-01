@@ -1,6 +1,7 @@
 Datecombinator::Application.routes.draw do
   get "profiles/search"
   match 'profiles/:id/clickout' => 'profiles#clickout'
+  match 'account/' => 'account#index', :as => :account
   
   resources :profiles do
     resources :profile_urls
@@ -10,7 +11,6 @@ Datecombinator::Application.routes.draw do
   devise_for :users
 
   get "home/index"
-  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

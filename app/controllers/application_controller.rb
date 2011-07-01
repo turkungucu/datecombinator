@@ -10,4 +10,10 @@ class ApplicationController < ActionController::Base
       "application"
     end
   end
+  
+  # Devise: Where to redirect users once they have logged in
+  def after_sign_in_path_for(resource)
+    account_path
+  end
+
 end
