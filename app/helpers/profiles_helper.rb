@@ -40,4 +40,8 @@ module ProfilesHelper
      ['25 miles', '25'], ['35 miles', '35'], ['50 miles', '50'],
      ['75 miles', '75'], ['100 miles', '100']]
   end
+  
+  def oldest_birth_year
+    1950
+  end
 end
