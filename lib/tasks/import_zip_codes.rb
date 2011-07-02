@@ -2,7 +2,7 @@ require 'csv'
 
 puts "Starting parsing csv file"
 count = 0;
-CSV.foreach("zipnov99.csv") do |row|
+CSV.foreach("lib/tasks/zipnov99.csv") do |row|
   zip_code = ZipCode.new
   zip_code.zip = row[0]
   zip_code.latitude = row[1].to_f
