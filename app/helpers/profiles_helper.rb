@@ -26,4 +26,18 @@ module ProfilesHelper
   def desc_char_limit
     350
   end
+  
+  # returns all numbers 18 through 99
+  def age_range
+    18..99
+  end
+  
+  # to be used in within zipcode dropdowns
+  # ex:
+  #  <%= select_tag(:within, options_for_select(distance_list)) %>
+  def distance_list
+    [['5 miles', '5'], ['10 miles', '10'], ['15 miles', '15'], 
+     ['25 miles', '25'], ['35 miles', '35'], ['50 miles', '50'],
+     ['75 miles', '75'], ['100 miles', '100']]
+  end
 end
