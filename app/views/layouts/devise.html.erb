@@ -17,9 +17,10 @@
 		
 		<div class="spacer"></div>
 		
+		<%= render :partial => "shared/notice", :locals => { :notice => notice, :alert => nil }%>
+		
 		<div class="content-container">
 			<div class="centered-container">
-				<p class="notice"><%= notice %></p>
 				<%= yield %>
 			</div>
 		</div>

@@ -17,11 +17,9 @@
 		
 		<div class="spacer"></div>
 		
+		<%= render :partial => "shared/notice", :locals => { :notice => notice, :alert => alert }%>
+		
 		<div class="content-container">
-			<% unless notice.blank? %>
-				<div class="notice"><%= notice %></div>
-				<div class="spacer"></div>
-			<% end %>
 			<%= yield %>
 		</div>
 

@@ -1,5 +1,5 @@
 <div><%= f.label :gender %></div>
-<%= f.select :password, options_for_select(gender_list) %></p>
+<%= f.select :gender, options_for_select(gender_list) %></p>
 
 <div><%= f.label :date_of_birth %> <i>(must be 18 years or older)</i></div>
 <%= f.date_select :date_of_birth, :start_year => Date.today.year, :end_year => oldest_birth_year %></p>

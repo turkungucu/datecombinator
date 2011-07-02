@@ -17,6 +17,8 @@
 		
 		<div class="spacer"></div>
 		
+		<%= render :partial => "shared/notice", :locals => { :notice => notice, :alert => alert }%>
+		
 		<div class="search-container">
 			<%= render "shared/search_form"%>
 		</div>
