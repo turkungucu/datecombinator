@@ -17,11 +17,11 @@
   </div>
   <div class="field">
     <%= f.label :gender %><br />
-    <%= f.select :gender, options_for_select([['Male', 'male'], ['Female', 'female']]) %>
+    <%= f.select :gender, options_for_select(gender_list) %>
   </div>
   <div class="field">
     <%= f.label :seeking_gender %><br />
-    <%= f.select :seeking_gender, options_for_select([['Male', 'male'], ['Female', 'female']]) %>
+    <%= f.select :seeking_gender, options_for_select(gender_list) %>
   </div>
   <div class="field">
     <%= f.label :date_of_birth %><br />
