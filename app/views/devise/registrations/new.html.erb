@@ -11,6 +11,8 @@
 
   <div><%= f.label :password_confirmation %></div>
   <%= f.password_field :password_confirmation %></p>
+  
+  <%= render :partial => "devise/shared/additional_fields", :locals => { :f => f } %>
 
   <p><%= f.submit "Signup", :class => "submit" %></p>
 <% end %>

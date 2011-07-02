@@ -176,3 +176,15 @@ h2 {
   margin-right: $side-margin;
 }
 /* Spacers End */
+
+.left {
+  float: left;
+  padding-left: 200px;
+}
+
+.right {
+  float: right;
+  padding-right: 200px;
+}
+
+.clear { clear: both;}

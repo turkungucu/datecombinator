@@ -14,6 +14,8 @@
 
   <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i></div>
   <%= f.password_field :current_password %></p>
+  
+  <%= render :partial => "devise/shared/additional_fields", :locals => { :f => f } %>
 
   <p><%= f.submit "Update", :class => "submit" %></p>
 <% end %>

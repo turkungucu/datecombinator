@@ -44,4 +44,8 @@ module ProfilesHelper
   def oldest_birth_year
     1950
   end
+  
+  def youngest_birth_year
+    Date.today.year - 18
+  end
 end

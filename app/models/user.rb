@@ -5,5 +5,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :timeoutable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :gender, :zip_code, :date_of_birth
+  
+  validates_format_of :zip_code, :with => /(^\d{5}$)/, :message => 'is an invalid zip code' 
+  
+  validates_inclusion_of :date_of_birth, :in => Date.new(1900)..Time.now.years_ago(18).to_date,
+    :message => 'You must be 18 years or older to signup'
 end

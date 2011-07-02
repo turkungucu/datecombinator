@@ -2,7 +2,7 @@
   <%= label_tag(:gender, "I am a ") %>
   <%= select_tag(:gender, options_for_select(gender_list)) %>
   <%= label_tag(:seeking_gender, " who is seeking a ") %>
-  <%= select_tag(:seeking_gender, options_for_select(gender_list)) %>
+  <%= select_tag(:seeking_gender, options_for_select(gender_list, 'female')) %>
   
   <%= label_tag(:age_from, " from age ") %>
   <%= select_tag(:age_from, options_for_select(age_range)) %>
