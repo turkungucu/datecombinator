@@ -17,15 +17,19 @@
   </div>
   <div class="field">
     <%= f.label :gender %><br />
-    <%= f.select :gender, options_for_select(gender_list) %>
+    <%= f.select :gender, options_for_select(gender_list, @profile.gender) %>
   </div>
   <div class="field">
     <%= f.label :seeking_gender %><br />
-    <%= f.select :seeking_gender, options_for_select(gender_list) %>
+    <%= f.select :seeking_gender, options_for_select(gender_list, @profile.seeking_gender) %>
   </div>
   <div class="field">
     <%= f.label :date_of_birth %><br />
     <%= f.date_select :date_of_birth, :start_year => oldest_birth_year %>
+  </div>
+  <div class="field">
+    <%= f.label :ethnicity %><br />
+    <%= f.select :ethnicity, options_for_select(ethnicity_list, @profile.ethnicity), {:include_blank => 'Please Select'} %>
   </div>
   <div class="field">
     <%= f.label :zip_code %><br />

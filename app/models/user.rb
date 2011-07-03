@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :timeoutable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :gender, :zip_code, :date_of_birth
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :gender, :zip_code, :date_of_birth, :ethnicity
   
   validates_format_of :zip_code, :with => /(^\d{5}$)/, :message => 'is an invalid zip code' 
   

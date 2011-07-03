@@ -48,4 +48,18 @@ module ProfilesHelper
   def youngest_birth_year
     Date.today.year - 18
   end
+  
+  # to be used in ethnicity dropdowns
+  # ex:
+  #  <%= f.select :ethnicity, options_for_select(ethnicity_list) %>
+  def ethnicity_list
+    [['Black', 'black'], ['Caucasian', 'caucasian'], ['European', 'european'],
+     ['Hispanic', 'hispanic'], ['Indian', 'indian'], ['Middle Eastern', 'middle-eastern'],
+     ['Native American', 'native-american'], ['Asian', 'asian'], ['Mixed Race', 'mixed-race'],
+     ['Other', 'other']]
+  end
+  
+  def ethnicity_list_with_blank
+    [['All Ethnicities', '']] | ethnicity_list
+  end
 end

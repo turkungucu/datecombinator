@@ -6,3 +6,6 @@
   
 <div><%= f.label :zip_code %></div>
 <%= f.text_field(:zip_code, :size => 5) %></p>
+
+<div><%= f.label :ethnicity %> <i>(optional)</i></div>
+<%= f.select :ethnicity, options_for_select(ethnicity_list, ethnicity), {:include_blank => 'Please Select'} %></p>

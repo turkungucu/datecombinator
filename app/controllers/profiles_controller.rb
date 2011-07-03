@@ -96,6 +96,11 @@ class ProfilesController < ApplicationController
       cond_hash[:zip_code] = zip_codes
     end
     
+    ethnicity = params[:ethnicity]
+    unless ethnicity.blank?
+      cond_hash[:ethnicity] = ethnicity
+    end
+    
     @profiles = Profile.where(cond_hash)
     
     respond_to do |format|

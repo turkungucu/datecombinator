@@ -1,4 +1,4 @@
-<h2>Signup</h2>
+<h2>Sign Up</h2>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -12,7 +12,7 @@
   <div><%= f.label :password_confirmation %></div>
   <%= f.password_field :password_confirmation %></p>
   
-  <%= render :partial => "devise/shared/additional_fields", :locals => { :f => f } %>
+  <%= render :partial => "devise/shared/additional_fields", :locals => { :f => f, :ethnicity => resource.ethnicity } %>
 
   <p><%= f.submit "Signup", :class => "submit" %></p>
 <% end %>
