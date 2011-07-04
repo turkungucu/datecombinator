@@ -3,11 +3,14 @@
 <% if user_signed_in? %>
 	Hello <b><%= current_user.email %></b>! 
 	<%= link_to "Dashboard", account_path %> |
-	<%= link_to "How It Works", root_path %> | 
+	<%= link_to "How It Works", home_how_it_works_path %> | 
 	<%= link_to "Sign Out", destroy_user_session_path %> | 
-	
+<% elsif admin_signed_in? %>
+	Hello Admin! 
+	<%= link_to "Profiles", profiles_path %> |
+	<%= link_to "Sign Out", destroy_admin_session_path %> |
 <% else %>
-	<%= link_to "How It Works", root_path %> | 
+	<%= link_to "How It Works", home_how_it_works_path %> | 
 	<%= link_to "Sign Up", new_user_registration_path %> | 
 	<%= link_to "Sign In", user_session_path %> |  
 <% end %>

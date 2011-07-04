@@ -1,6 +1,8 @@
 require 'zip_codes_helper'
 
 class ProfilesController < ApplicationController
+  before_filter :authenticate_admin!, :except => [:search, :clickout]
+  
   # GET /profiles
   # GET /profiles.json
   def index

@@ -1,4 +1,7 @@
 Datecombinator::Application.routes.draw do
+  devise_for :admins
+  devise_for :users
+  
   get "profiles/search"
   match 'profiles/:id/clickout' => 'profiles#clickout'
   match 'account/' => 'account#index', :as => :account
@@ -8,9 +11,8 @@ Datecombinator::Application.routes.draw do
     resources :profile_images
   end
 
-  devise_for :users
-
   get "home/index"
+  get "home/how_it_works"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
