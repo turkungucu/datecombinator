@@ -1,0 +1,35 @@
+<strong>DB Query Page</strong>
+<hr/>
+<form action="/dbquery/show">
+  <textarea id="query" name="query" rows="5" cols="90"><% if !params[:query].nil? %><%=params[:query]%><% end %></textarea> 
+  <br/><br/>
+  <input type="submit" value="Run">
+</form>
+
+<% if !@error_msg.nil? %>
+	<%= @error_msg %>	
+<% end %>
+<% 
+if !@result.nil? and !@result.first.nil?
+	column_names = Array.new
+	@result.first.each_pair do |k,v|
+		column_names.push(k)
+	end
+%>
+<br/>
+<table border="1">
+	<tr>
+<% column_names.each do |c| %>
+		<th><%= c %></th>
+<% end %>
+	</tr>
+<% @result.each do |row| %>
+	<tr>
+	<% row.each_pair do |k,v| %>
+		<td><%= v %></td>
+	<% end %>
+	</tr>
+<% end %>
+</table>
+<% end %>
+
