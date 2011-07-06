@@ -5,5 +5,8 @@
 
 <p>
 	<b>Display Name:</b>
-	<%= profile_url.display_name %>
+	<%= profile_url.display_name %> - 
+	<%= link_to 'Delete', [profile_url.profile, profile_url],
+               :confirm => 'Are you sure?',
+               :method => :delete %>
 </p>

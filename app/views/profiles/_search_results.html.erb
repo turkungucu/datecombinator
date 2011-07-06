@@ -4,9 +4,7 @@
 			<tr class="<%= cycle("even", "odd") %>">
 				<td id="picture">
 					<% if profile.profile_images.any? %>
-						<% profile.profile_images.each do |image| %>
-							<%= image_tag image.url %>
-						<% end %>
+						<%= image_tag profile.profile_images.first.url, :size => "90x90" %>
 					<% else %>
 						No pic.
 					<% end %>

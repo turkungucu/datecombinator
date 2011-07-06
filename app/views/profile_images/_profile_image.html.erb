@@ -1,4 +1,7 @@
 <p>
 	<b>URL:</b>
-	<%= profile_image.url %>
+	<%= profile_image.url %> - 
+	<%= link_to 'Delete', [profile_image.profile, profile_image],
+               :confirm => 'Are you sure?',
+               :method => :delete %>
 </p>
