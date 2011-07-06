@@ -14,6 +14,8 @@ Datecombinator::Application.routes.draw do
   get "home/index"
   get "home/how_it_works"
 
+  resources :dbquery
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
