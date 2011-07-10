@@ -1,7 +1,7 @@
 require 'zip_codes_helper'
 
 class ProfilesController < ApplicationController
-  before_filter :authenticate_admin!, :except => [:search, :clickout]
+  before_filter :authenticate_admin!, :except => [:search, :clickout, :details]
   
   # GET /profiles
   # GET /profiles.json
@@ -125,4 +125,16 @@ class ProfilesController < ApplicationController
       redirect_to url.url
     end
   end
+   
+  # GET /profiles/1/details
+  # GET /profiles/1/details.json
+  def details
+    @profile = Profile.find(params[:id])
+
+    respond_to do |format|
+      format.html # details.html.erb
+      format.json { render json: @profile }
+    end
+  end
+  
 end

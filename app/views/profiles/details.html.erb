@@ -1,0 +1,44 @@
+<div class="details-container">
+	<div class="gallery">
+		<div class="full-image">
+			<%= image_tag @profile.profile_images.first.url %>
+		</div>
+		<div class="thumbs">
+			<% @profile.profile_images.each do |img| %>
+				<a href="#"><%= image_tag img.url, :size => "90x90", :class => "transparency" %></a><p/>
+			<% end %>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="info">
+		<p><b>Name:</b> <%= @profile.nickname %></p>
+		<p><b>Seeking:</b> <%= @profile.seeking_gender %></p>
+		<p><b>Age:</b> <%= age(@profile.date_of_birth) %></p>
+		<p><b>City:</b> <%= city_from_zip(@profile.zip_code) %></p>
+		<p><b>Ethnicity:</b> <%= @profile.ethnicity %></p>
+		<p>
+			<b>View Full Profile:</b><br/>
+			<%= render :partial => "profile_urls/contact_button",
+			       	   :collection => @profile.profile_urls %>
+		</p>
+		<% if user_signed_in? %>
+			<p id="fav">
+				<% if is_favorite?(@profile.id) %>
+					<small>This profile has been added to your favorites.</small>
+				<% else %>
+					<%= render :partial => "favorites/add_to_favorites_button",
+				    	       :locals => {:profile_id => @profile.id} %>
+				<% end %>
+			</p>
+		<% else %>
+			<small>You must login to add this profile to your favorites.</small>	
+		<% end %>
+	</div>
+	<div class="clear"></div>
+</div>
+<div class="description">
+	<span class="headline"><%= @profile.headline %></span><br/>
+	<p><%= @profile.description %></p>
+</div>
+
+			

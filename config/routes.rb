@@ -2,17 +2,22 @@ Datecombinator::Application.routes.draw do
   devise_for :admins
   devise_for :users
   
-  get "profiles/search"
+  get 'profiles/search'
+  get 'profiles/:id/details' => 'profiles#details', :as => :profile_details
+  get 'favorites/' => 'favorites#index'
+  
   match 'profiles/:id/clickout' => 'profiles#clickout'
   match 'account/' => 'account#index', :as => :account
+  match 'profiles/:id/add_to_favorites' => 'favorites#add_to_favorites', :as => :add_to_favs
+  match 'profiles/:id/remove_from_favorites' => 'favorites#remove_from_favorites', :as => :remove_from_favs
   
   resources :profiles do
     resources :profile_urls
     resources :profile_images
   end
 
-  get "home/index"
-  get "home/how_it_works"
+  get 'home/index'
+  get 'home/how_it_works'
 
   resources :dbquery
 

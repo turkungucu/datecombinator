@@ -4,11 +4,12 @@
   You can use Sass (SCSS) here: http://sass-lang.com/
 */
 
-$odd-row-background-color: #f6f6f6;
+$odd-row-background-color: #eeeeee;
+$container-border-color: #dddddd;
 
 td {
   padding: 20px 0 20px 20px;
-  &#picture { width: 10%; }
+  &#picture { width: 10%; & img {border: 1px solid $container-border-color;} }
   &#profile { width: 70%; }
   &#contact-via { width: 20%; vertical-align: top; }
 }

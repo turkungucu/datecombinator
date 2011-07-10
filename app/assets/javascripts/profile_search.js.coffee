@@ -16,4 +16,4 @@ $(document).ready ->
 		.bind('ajax:beforeSend', before)
 		.bind('ajax:complete', after)
 		.bind('ajax:error', (xhr, status, error) ->
-		)
+		)	

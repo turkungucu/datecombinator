@@ -24,7 +24,7 @@ module ProfilesHelper
   
   # number of characters displayed as profile description on search results
   def desc_char_limit
-    350
+    340
   end
   
   # returns all numbers 18 through 99
