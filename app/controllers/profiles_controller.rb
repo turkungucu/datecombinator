@@ -2,6 +2,11 @@ require 'zip_codes_helper'
 
 class ProfilesController < ApplicationController
   before_filter :authenticate_admin!, :except => [:search, :clickout, :details]
+  layout :resolve_layout
+  
+  def resolve_layout
+    action_name == "details" ? "account" : "application"
+  end
   
   # GET /profiles
   # GET /profiles.json
@@ -103,11 +108,11 @@ class ProfilesController < ApplicationController
       cond_hash[:ethnicity] = ethnicity
     end
     
-    @profiles = Profile.where(cond_hash)
+    @profiles = Profile.where(cond_hash).paginate :page => params[:page], :per_page => 10
     
     respond_to do |format|
-      #format.html # search.html.erb
-      format.js
+      format.html # search.html.erb
+      format.json { render json: @profile }
     end
   end
   

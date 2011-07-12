@@ -1,23 +1,24 @@
-<%= form_tag(profiles_search_path, :method => "get", :remote => true, :id => 'search-form') do %>
+<%= form_tag(profiles_search_path, :method => "get") do %>
 	<div>
 		<%= label_tag(:gender, "I am a ") %>
-		<%= select_tag(:gender, options_for_select(gender_list)) %>
+		<%= select_tag(:gender, options_for_select(gender_list, params[:gender])) %>
 		<%= label_tag(:seeking_gender, " Seeking a ") %>
-		<%= select_tag(:seeking_gender, options_for_select(gender_list, 'female')) %>
+		<%= select_tag(:seeking_gender, options_for_select(gender_list, 
+			params[:seeking_gender].blank? ? "female" : params[:seeking_gender])) %>
 		
 		<%= label_tag(:ethnicity, " of Ethnicity ") %>
-		<%= select_tag(:ethnicity, options_for_select(ethnicity_list_with_blank)) %>
+		<%= select_tag(:ethnicity, options_for_select(ethnicity_list_with_blank, params[:ethnicity])) %>
 		
 		<%= label_tag(:age_from, " from Age ") %>
-		<%= select_tag(:age_from, options_for_select(age_range)) %>
+		<%= select_tag(:age_from, options_for_select(age_range, params[:age_from])) %>
 		<%= label_tag(:age_to, " to ") %>
-		<%= select_tag(:age_to, options_for_select(age_range)) %>
+		<%= select_tag(:age_to, options_for_select(age_range, params[:age_to])) %>
 	</div>
 	<div style="margin-top: 10px;">
 		<%= label_tag(:within, " lives Within ") %>
-  		<%= select_tag(:within, options_for_select(distance_list)) %>
+  		<%= select_tag(:within, options_for_select(distance_list, params[:within])) %>
   		<%= label_tag(:zip_code, " of Zip Code ") %>
-  		<%= text_field_tag(:zip_code, nil, :size => 5) %>
+  		<%= text_field_tag(:zip_code, params[:zip_code], :style => "width: 60px;") %>
   		<div style="float: right;">
   			<%= submit_tag("Search", :class => "submit", :style => "height: 34px; width: 100px;") %>
   		</div>
