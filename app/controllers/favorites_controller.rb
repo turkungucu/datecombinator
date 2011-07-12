@@ -8,6 +8,9 @@ class FavoritesController < ApplicationController
     @favorites.each do | fav |
       @profiles.push(Profile.find(fav.profile_id))
     end
+    
+    @profiles = @profiles.paginate :page => params[:page], :per_page => 10
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @profiles }
