@@ -141,6 +141,12 @@ h2 {
   height: 400px;
 }
 
+.splash-female-2 {
+  @include container-common;
+  background: #ffffff url("splash-female-2.jpg") no-repeat left top;
+  height: 400px;
+}
+
 .splash-male {
   @include container-common;
   background: #ffffff url("splash-male.jpg") no-repeat left top;
@@ -150,6 +156,10 @@ h2 {
 .search-container-flat {
   @include container-common;
   height: 75px;
+}
+
+.howitworks-container {
+  background: #ffffff url("splash-female.jpg") no-repeat left top;
 }
 
 .footer-container {
