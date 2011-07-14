@@ -159,6 +159,7 @@ h2 {
 }
 
 .howitworks-container {
+  @include container-common;
   background: #ffffff url("splash-female.jpg") no-repeat left top;
 }
 
@@ -222,11 +223,15 @@ h2 {
 
 .clear { clear: both;}
 
-.search-form {
+.transparent-bg {
+  background: transparent url("search-form-bg.png") left top;
+  color: #ffffff;
   padding: 15px;
+}
+
+.search-form {
+  @extend .transparent-bg;
   float: right;
   margin-top: 100px;
   height: 200px;
-  background: transparent url("search-form-bg.png") left top;
-  color: #ffffff;
 }
