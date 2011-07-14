@@ -3,17 +3,11 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $(document).ready ->
-	before = -> 
-		$('#ajax-loader').toggle() 
-		$('#search-results').slideUp("slow")
+	$("#seeking_gender").change ->
+		if $("#seeking_gender").val() == "male"
+			$("#search-container").attr("class", "splash-male")
+		else
+			$("#search-container").attr("class", "splash-female")
+			
 	
-	after = -> 
-		$('#search-results').slideDown("slow", -> 
-			$('#ajax-loader').toggle()
-		)
-		 
-	$("#search-form")
-		.bind('ajax:beforeSend', before)
-		.bind('ajax:complete', after)
-		.bind('ajax:error', (xhr, status, error) ->
-		)	
+		

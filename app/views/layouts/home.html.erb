@@ -19,18 +19,12 @@
 		
 		<%= render :partial => "shared/notice", :locals => { :notice => notice, :alert => alert }%>
 		
-		<div class="search-container-flat">
-			<%= render "shared/search_form_flat"%>
+		<div id="search-container" class="splash-female">
+			<div class="search-form">
+				<%= render "shared/search_form"%>
+			</div>
 		</div>
-		
-		<div class="spacer"></div>
-		
-		<div class="content-container">
-			<div id="search-results">
-		    	<%= yield %>
-		    </div>
-		</div>
-		
+			
 		<div class="spacer"></div>
 		
 	</div>

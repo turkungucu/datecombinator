@@ -5,28 +5,26 @@
 		<%= label_tag(:seeking_gender, " Seeking a ") %>
 		<%= select_tag(:seeking_gender, options_for_select(gender_list, 
 			params[:seeking_gender].blank? ? "female" : params[:seeking_gender])) %>
-	</div>
-	<div class="spacer-2"></div>
-	<div>
+
 		<%= label_tag(:ethnicity, " of Ethnicity ") %>
 		<%= select_tag(:ethnicity, options_for_select(ethnicity_list_with_blank, params[:ethnicity])) %>
-	</div>
-	<div class="spacer-2"></div>
-	<div>
+
 		<%= label_tag(:age_from, " from Age ") %>
 		<%= select_tag(:age_from, options_for_select(age_range, params[:age_from])) %>
 		<%= label_tag(:age_to, " to ") %>
 		<%= select_tag(:age_to, options_for_select(age_range, params[:age_to])) %>
-	</div>
-	<div class="spacer-2"></div>
-	<div>
-		<%= label_tag(:within, " lives Within ") %>
+
+		<%= label_tag(:within, " who lives Within ") %>
   		<%= select_tag(:within, options_for_select(distance_list, params[:within])) %>
-  		<%= label_tag(:zip_code, " of Zip Code ") %>
-  		<%= text_field_tag(:zip_code, params[:zip_code], :style => "width: 60px;") %>
-	</div>
-	<div class="spacer-2"></div>
-	<div style="float: right;">
-		<%= submit_tag("Search", :class => "submit", :style => "height: 34px; width: 100px;") %>
+  		<div class="spacer-2"></div>
+  		<div>
+  			<div style="float:left; width: 50%;">
+	  			<%= label_tag(:zip_code, " of Zip Code ") %>
+	  			<%= text_field_tag(:zip_code, params[:zip_code], :style => "width: 60px;") %>
+	  		</div>
+			<div style="float: right;">
+				<%= submit_tag("Search", :class => "submit", :style => "height: 34px; width: 100px;") %>
+			</div>
+  		</div>
 	</div>
 <% end %>

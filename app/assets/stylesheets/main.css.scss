@@ -135,7 +135,19 @@ h2 {
   @include container-common;
 }
 
-.search-container {
+.splash-female {
+  @include container-common;
+  background: #ffffff url("splash-female.jpg") no-repeat left top;
+  height: 400px;
+}
+
+.splash-male {
+  @include container-common;
+  background: #ffffff url("splash-male.jpg") no-repeat left top;
+  height: 400px;
+}
+
+.search-container-flat {
   @include container-common;
   height: 75px;
 }
@@ -172,6 +184,12 @@ h2 {
   height: 20px;
 }
 
+.spacer-2 {
+  @include no-margin-padding;
+  position: relative;
+  height: 10px;
+}
+
 #top-spacer {
   padding-top: 5px;
 }
@@ -193,3 +211,13 @@ h2 {
 }
 
 .clear { clear: both;}
+
+.search-form {
+  padding: 10px;
+  float: right;
+  margin-top: 100px;
+  width: 350px;
+  height: 200px;
+  background: transparent url("search-form-bg.png") left top;
+  color: #ffffff;
+}

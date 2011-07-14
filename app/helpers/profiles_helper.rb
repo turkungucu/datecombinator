@@ -19,7 +19,7 @@ module ProfilesHelper
   # ex:
   #  <%= f.select :seeking_gender, options_for_select(gender_list) %>
   def gender_list
-    [['Male', 'male'], ['Female', 'female']]
+    [['Man', 'male'], ['Woman', 'female']]
   end
   
   # number of characters displayed as profile description on search results
