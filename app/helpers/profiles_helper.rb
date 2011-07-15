@@ -11,7 +11,7 @@ module ProfilesHelper
     if zc.nil?
       return ""
     else
-      return zc.city
+      return zc.city.downcase.split(' ').map {|w| w.capitalize }.join(' ')
     end
   end
   
@@ -20,6 +20,13 @@ module ProfilesHelper
   #  <%= f.select :seeking_gender, options_for_select(gender_list) %>
   def gender_list
     [['Man', 'male'], ['Woman', 'female']]
+  end
+  
+  # converts gender value stored in db to gender label (Man or Woman)
+  def to_gender_label(val)
+    gender_list.each do |g|
+      return g[0] if g[1] == val
+    end
   end
   
   # number of characters displayed as profile description on search results
@@ -61,5 +68,11 @@ module ProfilesHelper
   
   def ethnicity_list_with_blank
     [['All Ethnicities', '']] | ethnicity_list
+  end
+  
+  def to_ethnicity_label(val)
+    ethnicity_list.each do |e|
+      return e[0] if e[1] == val
+    end
   end
 end

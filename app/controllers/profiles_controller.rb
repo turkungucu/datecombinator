@@ -5,7 +5,7 @@ class ProfilesController < ApplicationController
   layout :resolve_layout
   
   def resolve_layout
-    action_name == "details" ? "account" : "application"
+    action_name == "search" ? "application" : "account"
   end
   
   # GET /profiles

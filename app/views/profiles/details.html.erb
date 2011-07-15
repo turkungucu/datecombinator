@@ -12,10 +12,10 @@
 	</div>
 	<div class="info">
 		<p><b>Name:</b> <%= @profile.nickname %></p>
-		<p><b>Seeking:</b> <%= @profile.seeking_gender %></p>
+		<p><b>Seeking:</b> <%= to_gender_label(@profile.seeking_gender) %></p>
 		<p><b>Age:</b> <%= age(@profile.date_of_birth) %></p>
 		<p><b>City:</b> <%= city_from_zip(@profile.zip_code) %></p>
-		<p><b>Ethnicity:</b> <%= @profile.ethnicity %></p>
+		<p><b>Ethnicity:</b> <%= to_ethnicity_label(@profile.ethnicity) %></p>
 		<p>
 			<b>View Full Profile:</b><br/>
 			<%= render :partial => "profile_urls/contact_button",
