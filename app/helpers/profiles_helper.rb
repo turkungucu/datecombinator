@@ -15,6 +15,16 @@ module ProfilesHelper
     end
   end
   
+  # get the name of the city that given zipcode belongs to
+  def state_from_zip(zip)
+    zc = ZipCode.find_by_zip(zip)
+    if zc.nil?
+      return ""
+    else
+      return zc.state
+    end
+  end
+  
   # to be used in gender dropdowns
   # ex:
   #  <%= f.select :seeking_gender, options_for_select(gender_list) %>

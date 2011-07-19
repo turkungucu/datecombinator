@@ -17,7 +17,7 @@
 				<td id="profile">
 					<span class="headline"><%= profile.headline %></span><br/>
 					<b><%= profile.nickname %>, Age <%= age(profile.date_of_birth) %>, 
-						from <%= city_from_zip(profile.zip_code) %></b>
+						from <%= city_from_zip(profile.zip_code) %>, <%= state_from_zip(profile.zip_code) %></b>
 					<p><%= profile.description.truncate(desc_char_limit) %></p>
 				</td>
 				<td id="contact-via">
