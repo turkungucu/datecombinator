@@ -14,11 +14,11 @@
 		<%= label_tag(:age_to, " to ") %>
 		<%= select_tag(:age_to, options_for_select(age_range, params[:age_to])) %>
 
-		<%= label_tag(:within, " who lives Within ") %>
-  		<%= select_tag(:within, options_for_select(distance_list, params[:within])) %>
   		<div class="spacer-2"></div>
   		<div>
   			<div style="float:left; width: 50%;">
+				<%= label_tag(:within, " who lives Within ") %>
+				<%= select_tag(:within, options_for_select(distance_list, params[:within])) %>
 	  			<%= label_tag(:zip_code, " of Zip Code ") %>
 	  			<%= text_field_tag(:zip_code, params[:zip_code], :style => "width: 60px;") %>
 	  		</div>
