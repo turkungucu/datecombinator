@@ -11,17 +11,7 @@ module ProfilesHelper
     if zc.nil?
       return ""
     else
-      return zc.city.downcase.split(' ').map {|w| w.capitalize }.join(' ')
-    end
-  end
-  
-  # get the name of the city that given zipcode belongs to
-  def state_from_zip(zip)
-    zc = ZipCode.find_by_zip(zip)
-    if zc.nil?
-      return ""
-    else
-      return zc.state
+      return "#{zc.city.downcase.split(' ').map {|w| w.capitalize }.join(' ')}, #{zc.state}"
     end
   end
   
