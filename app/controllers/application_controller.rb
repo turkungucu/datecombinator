@@ -13,7 +13,11 @@ class ApplicationController < ActionController::Base
   
   # Devise: Where to redirect users once they have logged in
   def after_sign_in_path_for(resource)
-    account_path
+    if resource.is_a?(Admin)
+      super
+    else
+      account_path
+    end
   end
 
 end
